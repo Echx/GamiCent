@@ -29,6 +29,19 @@
                                     <action selector="reportNewScore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QnA-Tc-62c"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WsX-W9-zai">
+                                <rect key="frame" x="0.0" y="166" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DXv-50-x11"/>
+                                </constraints>
+                                <state key="normal" title="Open Leaderboard">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openLeaderboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Qjy-5g-gdb"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJz-9W-NZA">
                                 <rect key="frame" x="0.0" y="421" width="600" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -40,6 +53,32 @@
                                 </state>
                                 <connections>
                                     <action selector="getScoresInLeaderboard:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2bB-Dg-UPZ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ND0-kW-7tS">
+                                <rect key="frame" x="0.0" y="510" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="U0b-57-pXv"/>
+                                </constraints>
+                                <state key="normal" title="Get single achievements: ">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getSingleAchievements:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XJY-k4-IHi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAL-L7-BU6">
+                                <rect key="frame" x="0.0" y="550" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="U1k-Eo-q6m"/>
+                                </constraints>
+                                <state key="normal" title="Report Achievement finished">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="reportFinished:" destination="BYZ-38-t0r" eventType="touchUpInside" id="feR-9E-u8D"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="g62-VY-VvY">
@@ -56,7 +95,7 @@
                                     <constraint firstAttribute="width" constant="85" id="Kgw-bf-GlW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PiM-K9-kVK">
@@ -65,7 +104,7 @@
                                     <constraint firstAttribute="width" constant="341" id="PUq-sL-DQt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mCh-rw-R9e">
@@ -81,6 +120,32 @@
                                     <action selector="getLeaderboards:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TJ3-aM-xer"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JcD-za-aFf">
+                                <rect key="frame" x="0.0" y="204" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mIn-S9-l0G"/>
+                                </constraints>
+                                <state key="normal" title="Open Achievement">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="openAchievement:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ukh-sV-d9u"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-r6-ity">
+                                <rect key="frame" x="0.0" y="472" width="600" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uYb-bQ-EQB"/>
+                                </constraints>
+                                <state key="normal" title="Get all achievements">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="getAchievements:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4fU-xG-83B"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -89,17 +154,32 @@
                             <constraint firstAttribute="centerX" secondItem="MJz-9W-NZA" secondAttribute="centerX" id="5YO-x9-1nd"/>
                             <constraint firstItem="mCh-rw-R9e" firstAttribute="top" secondItem="S7W-pa-vqO" secondAttribute="bottom" constant="16" id="6W1-tl-Jxc"/>
                             <constraint firstAttribute="centerX" secondItem="PiM-K9-kVK" secondAttribute="centerX" constant="-0.5" id="8g9-p7-OPP"/>
+                            <constraint firstItem="PAL-L7-BU6" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ACW-tE-GQl"/>
                             <constraint firstItem="S7W-pa-vqO" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="JSj-3p-X7x"/>
+                            <constraint firstAttribute="centerX" secondItem="ND0-kW-7tS" secondAttribute="centerX" id="Jsp-oc-fiJ"/>
                             <constraint firstAttribute="centerX" secondItem="dnC-NI-2dc" secondAttribute="centerX" constant="-0.5" id="PNY-rt-6BN"/>
                             <constraint firstItem="MJz-9W-NZA" firstAttribute="top" secondItem="mCh-rw-R9e" secondAttribute="bottom" constant="16" id="R8j-nv-oK6"/>
+                            <constraint firstItem="WsX-W9-zai" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="UDu-ey-urP"/>
                             <constraint firstItem="S7W-pa-vqO" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="265" id="Vv4-5C-ngk"/>
                             <constraint firstItem="PiM-K9-kVK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="62" id="W2o-ej-8lb"/>
                             <constraint firstAttribute="centerX" secondItem="mCh-rw-R9e" secondAttribute="centerX" id="XJE-pB-ijC"/>
+                            <constraint firstAttribute="centerX" secondItem="PAL-L7-BU6" secondAttribute="centerX" id="YJJ-iE-WVM"/>
+                            <constraint firstAttribute="centerX" secondItem="WsX-W9-zai" secondAttribute="centerX" id="Z6a-HX-waz"/>
+                            <constraint firstItem="RV9-r6-ity" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="cEy-4y-sxp"/>
                             <constraint firstAttribute="centerX" secondItem="S7W-pa-vqO" secondAttribute="centerX" id="eGd-vZ-e3d"/>
+                            <constraint firstItem="ND0-kW-7tS" firstAttribute="top" secondItem="RV9-r6-ity" secondAttribute="bottom" constant="8" id="eem-O3-9vH"/>
                             <constraint firstItem="g62-VY-VvY" firstAttribute="top" secondItem="dnC-NI-2dc" secondAttribute="bottom" constant="8" id="f5w-jf-H1z"/>
+                            <constraint firstItem="ND0-kW-7tS" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="gCu-MC-Qwg"/>
+                            <constraint firstAttribute="centerX" secondItem="JcD-za-aFf" secondAttribute="centerX" id="hy3-HA-1cj"/>
+                            <constraint firstItem="PAL-L7-BU6" firstAttribute="top" secondItem="ND0-kW-7tS" secondAttribute="bottom" constant="10" id="iyL-pH-bkc"/>
+                            <constraint firstItem="RV9-r6-ity" firstAttribute="top" secondItem="MJz-9W-NZA" secondAttribute="bottom" constant="21" id="kah-Nk-4mA"/>
                             <constraint firstAttribute="centerY" secondItem="dnC-NI-2dc" secondAttribute="centerY" constant="37.5" id="lfA-Vi-zBc"/>
+                            <constraint firstAttribute="centerX" secondItem="RV9-r6-ity" secondAttribute="centerX" id="rWA-df-Oxh"/>
                             <constraint firstItem="mCh-rw-R9e" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="ryB-T9-I9Y"/>
+                            <constraint firstItem="WsX-W9-zai" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="102" id="ulT-8M-3cy"/>
+                            <constraint firstAttribute="width" secondItem="JcD-za-aFf" secondAttribute="width" id="vHl-9p-onQ"/>
                             <constraint firstItem="dnC-NI-2dc" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="188" id="xpR-cw-bWL"/>
+                            <constraint firstItem="JcD-za-aFf" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="140" id="z5d-4G-TBj"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">

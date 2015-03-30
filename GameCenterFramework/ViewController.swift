@@ -90,8 +90,66 @@ class ViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func openLeaderboard(sender : AnyObject) {
+        GamiCent.showLeaderboard(leaderboardID: "gamicent_leader1") { (isShow) -> Void in
+            if (isShow) {
+                println("Success")
+            } else {
+                println("Fail!")
+            }
+        }
+    }
+    
+    @IBAction func openAchievement(sender : AnyObject) {
+        GamiCent.showAchievements { (isShow) -> Void in
+            if isShow {
+                println("Success")
+            } else {
+                println("Fail")
+            }
+        }
+    }
 
-
+    @IBAction func getAchievements(sender : AnyObject) {
+        GamiCent.getAllAchievementDescription { (result, error) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                if let achievements = result {
+                    for achievement in achievements {
+                        println("ID: \(achievement.identifier)")
+                        println("Description: \(achievement.unachievedDescription)")
+                    }
+                } else {
+                    println("No achievement")
+                }
+            }
+        }
+    }
+    
+    @IBAction func getSingleAchievements(sender : AnyObject) {
+        GamiCent.getAchievementWithID(achievementID: "gamicent_a1") { (result, error) -> Void in
+            if error != nil {
+                println(error)
+            } else {
+                if let achievement = result {
+                    println("ID: \(achievement.identifier)")
+                    println("Description: \(achievement.percentComplete)")
+                } else {
+                    println("No such achievement")
+                }
+            }
+        }
+    }
+    
+    @IBAction func reportFinished(sender : AnyObject) {
+        GamiCent.reportAchievements(percent: 100.0, achievementID: "gamicent_a1", isShowBanner: true) { (success) -> Void in
+            if (success) {
+                println("Finished reporting!")
+            }
+        }
+    }
 
 }
 
