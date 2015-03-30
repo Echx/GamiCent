@@ -185,6 +185,8 @@ class GamiCent : NSObject, GKGameCenterControllerDelegate {
                     completion(resultArrayGKLeaderboard: nil, error: nil)
                 }
             }
+        } else {
+            println("Fail to get leaderboards")
         }
     }
     
@@ -210,6 +212,8 @@ class GamiCent : NSObject, GKGameCenterControllerDelegate {
                                 error: nil)
                 }
             }
+        } else {
+            println("Fail to get leaderboards")
         }
     }
     
@@ -237,9 +241,100 @@ class GamiCent : NSObject, GKGameCenterControllerDelegate {
                     }
                 }
             })
+        } else {
+            println("Fail to report scores")
         }
     }
+    
+    // MARKS: Achievement operations
+    
+    // Get all achievements
+    // better cache the achievements for better performance
+    class func getAllAchievements(#completion: (result:[GKAchievement]?, error:NSError?) -> Void){
+        if GamiCent.isGameCenterAccessible() {
+            GKAchievement.loadAchievementsWithCompletionHandler({
+                (var achievements:[AnyObject]!, error:NSError!) -> Void in
+                if error != nil {
+                    println("Game Center: could not load achievements, error: \(error)")
+                    completion(result: nil, error: error)
+                } else {
+                    completion(result: achievements as? [GKAchievement], error: nil)
+                }
+            })
+        } else {
+            println("Fail to load")
+        }
+    }
+    
+    // Get single achievement
+    class func getAchievementWithID(#achievementID:String, completion: (result:GKAchievement?, error:NSError?) -> Void) {
+        GamiCent.getAllAchievements { (result, error) -> Void in
+            if error != nil {
+                println(error)
+                return
+            } else if result != nil {
+                println("No result!")
+                completion(result: nil, error: nil)
+                return
+            } else {
+                for achievement in result! {
+                    if achievement.identifier == achievementID {
+                        completion(result: achievement, error: nil)
+                        return
+                    }
+                }
+                println("No identifier found!")
+                completion(result: nil, error: nil)
+            }
+        }
+    }
+    
+    class func getGKAllAchievementDescription(#completion: (descArrays:[GKAchievementDescription]?, error: NSError?) -> Void) {
+        if GamiCent.isGameCenterAccessible() {
+            GKAchievementDescription.loadAchievementDescriptionsWithCompletionHandler {
+                (var descriptions:[AnyObject]!, error:NSError!) -> Void in
+                if error != nil {
+                    println("Game Center: couldn't load achievementInformation, error: \(error)")
+                    completion(descArrays: nil, error: error)
+                } else {
+                    if let achievementDesc = descriptions as? [GKAchievementDescription] {
+                        completion(descArrays: achievementDesc, error: nil)
+                    } else {
+                        let error = NSError()
+                        completion(descArrays: nil, error: error)
+                    }
+                }
+            }
+        } else {
+            let error = NSError()
+            completion(descArrays: nil, error: error)
+        }
+        
+    }
+    
+    // finish achievements
+    class func reportAchievements( #percent : Double, achievementID : String, showBannnerIfCompleted : Bool, completion: ((success:Bool) -> Void)? ) {
+        var achievement = GKAchievement(identifier: achievementID)
+        if achievement != nil {
+            achievement.percentComplete = percent
 
+            /* show banner if achievement is 100% completed */
+            if achievement.completed && showBannnerIfCompleted {
+                achievement.showsCompletionBanner = true
+            }
+            
+            GKAchievement.reportAchievements([achievement], withCompletionHandler: { (error) -> Void in
+                if completion != nil {
+                    if error != nil {
+                        completion!(success: false)
+                    } else {
+                        completion!(success: true)
+                    }
+                }
+            })
+        }
+    }
+    
     class func isAuthenticatedGameCenter() -> Bool {
         return GKLocalPlayer.localPlayer().authenticated
     }
